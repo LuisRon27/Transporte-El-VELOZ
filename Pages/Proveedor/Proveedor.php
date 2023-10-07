@@ -28,10 +28,10 @@
                         <a class="nav-link active" aria-current="page" href="../../Index.php">Home</a>
                     </li>
                     <li class="nav-item" style="margin: 0px 10px;">
-                        <a class="nav-link" href="Cliente.php">Clientes</a>
+                        <a class="nav-link" href="../Cliente/Cliente.php">Clientes</a>
                     </li>
                     <li class="nav-item" style="margin: 0px 10px;">
-                        <a class="nav-link" href="../Proveedor/Proveedor.php">Proveedores</a>
+                        <a class="nav-link" href="Proveedor.php">Proveedores</a>
                     </li>
                     <li class="nav-item" style="margin: 0px 10px;">
                         <a class="nav-link" href="../Servicio/Servicio.php">Servicios</a>
@@ -59,24 +59,24 @@
 
     <!--Title-->
     <div class="container mt-3">
-        <h1 class="text-center">Lista de Clientes</h1>
+        <h1 class="text-center">Lista de Proveedores</h1>
     </div>
 
     <!--Table-->
-    <div class="container">
+    <div class="container mb-2">
         <div class="container mb-3">
-            <a href="ABM/Agregar.Cliente.php" class="btn btn-primary">Agregar</a>
+            <a href="ABM/Agregar.Proveedor.php" class="btn btn-primary">Agregar</a>
             <a href="../../Index.php" class="btn btn-secondary">Volver</a>
         </div>
         <!-- Campo de búsqueda -->
         <div class="mb-3">
-            <input type="text" id="searchInput" class="form-control" placeholder="Buscar cliente">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar Proveedor">
         </div>
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead class="table-dark text-center table-header">
                     <tr>
-                        <th scope="col">IDCliente</th>
+                        <th scope="col">IDProveedor</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Direccion</th>
                         <th scope="col">Localidad</th>
@@ -93,15 +93,15 @@
                     <?php
                     require("../../Config/Conexion.php");
 
-                    $sql = $conexion->query("SELECT C.IDCliente, C.Nombre, C.Direccion, L.Nombre AS Localidad, C.TipoIVA, C.DNI, C.CUIT, C.Telefono, C.Email, C.Observaciones
-                    FROM Cliente C, Localidad L
-                    WHERE C.IDLocalidad = L.IDLocalidad");
+                    $sql = $conexion->query("SELECT P.IDProveedor, P.Nombre, P.Direccion, L.Nombre AS Localidad, P.TipoIVA, P.DNI, P.CUIT, P.Telefono, P.Email, P.Observaciones
+                    FROM Proveedor P, Localidad L
+                    WHERE P.IDLocalidad = L.IDLocalidad");
 
                     while ($resultado = $sql->fetch_assoc()) {
                         ?>
                         <tr>
                             <th scope="row">
-                                <?php echo $resultado['IDCliente'] ?>
+                                <?php echo $resultado['IDProveedor'] ?>
                             </th>
                             <td scope="row">
                                 <?php echo $resultado['Nombre'] ?>
@@ -132,9 +132,9 @@
                             </td>
                             <td scope="row" class="d-flex justify-content-center"
                                 style="gap: 1rem; padding: 1.5rem 0.5rem;">
-                                <a href="ABM/Editar.Cliente.php?IDCliente=<?php echo $resultado['IDCliente']; ?>"
+                                <a href="ABM/Editar.Proveedor.php?IDProveedor=<?php echo $resultado['IDProveedor']; ?>"
                                     class="btn btn-warning me-2">Editar</a>
-                                <a href="ABM/Eliminar.Cliente.php?IDCliente=<?php echo $resultado['IDCliente']; ?>"
+                                <a href="ABM/Eliminar.Proveedor.php?IDProveedor=<?php echo $resultado['IDProveedor']; ?>"
                                     class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
@@ -158,9 +158,10 @@
 
             <ul class="nav col-md-4 justify-content-end">
                 <li class="nav-item"><a href="../../Index.php" class="nav-link px-2 text-body-secondary">HOME</a></li>
-                <li class="nav-item"><a href="Cliente.php" class="nav-link px-2 text-body-secondary">CLIENTES</a></li>
-                <li class="nav-item"><a href="../Proveedor/Proveedor.php"
-                        class="nav-link px-2 text-body-secondary">PROVEEDORES</a></li>
+                <li class="nav-item"><a href="../Cliente/Cliente.php"
+                        class="nav-link px-2 text-body-secondary">CLIENTES</a></li>
+                <li class="nav-item"><a href="Proveedor.php" class="nav-link px-2 text-body-secondary">PROVEEDORES</a>
+                </li>
                 <li class="nav-item"><a href="../Servicio/Servicio.php"
                         class="nav-link px-2 text-body-secondary">SERVICIOS</a></li>
             </ul>

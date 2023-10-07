@@ -1,4 +1,4 @@
-// Función para buscar y filtrar clientes
+// Función para buscar y filtrar 
 function filterTable() {
     var input, filter, table, tr, td, i, j, txtValue;
     input = document.getElementById("searchInput");

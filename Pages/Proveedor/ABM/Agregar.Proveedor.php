@@ -4,18 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Agregar Cliente</title>
+    <title>Agregar Proveedor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container mt-3">
-        <h1 class="text-center">Agregar Cliente</h1>
+        <h1 class="text-center">Agregar Proveedor</h1>
     </div>
 
     <div class="container mt-3">
-        <form action="Insertar.Cliente.php" method="post">
+        <form action="Insertar.Proveedor.php" method="post">
             <div class="mb-3">
                 <label for="Nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="Nombre" name="Nombre" required maxlength="255">
@@ -26,7 +26,6 @@
                 <input type="text" class="form-control" id="Direccion" name="Direccion" required maxlength="255">
             </div>
 
-            <label for="Localidad" class="form-label">Localidad</label>
             <label for="Localidad" class="form-label">Localidad</label>
             <select class="form-select mb-3" name="IDLocalidad"> <!-- Cambiado a IDLocalidad -->
                 <option selected disabled>--Seleccionar Localidad--</option>
@@ -74,7 +73,7 @@
 
             <div class="text-center mb-3">
                 <button type="submit" class="btn btn-primary">Agregar</button>
-                <a href="../Cliente.php" class="btn btn-secondary">Volver</a>
+                <a href="../Proveedor.php" class="btn btn-secondary">Volver</a>
             </div>
         </form>
     </div>

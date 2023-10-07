@@ -11,7 +11,7 @@ $Telefono = $_POST['Telefono'];
 $Email = $_POST['Email'];
 $Observaciones = $_POST['Observaciones'];
 
-$sql = "INSERT INTO cliente (Nombre, Direccion, IDLocalidad, TipoIVA, DNI, CUIT, Telefono, Email, Observaciones) 
+$sql = "INSERT INTO proveedor (Nombre, Direccion, IDLocalidad, TipoIVA, DNI, CUIT, Telefono, Email, Observaciones) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conexion->prepare($sql);
@@ -20,7 +20,7 @@ if ($stmt) {
     $stmt->bind_param("ssissssss", $Nombre, $Direccion, $IDLocalidad, $TipoIVA, $DNI, $CUIT, $Telefono, $Email, $Observaciones);
 
     if ($stmt->execute()) {
-        header("Location: ../Cliente.php");
+        header("Location: ../Proveedor.php");
         exit;
     } else {
         echo "Error al guardar los datos en la base de datos.";

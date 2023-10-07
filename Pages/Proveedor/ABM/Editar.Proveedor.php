@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Editar Cliente</title>
+    <title>Editar Proveedor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -12,18 +12,18 @@
 <body>
 
     <div class="container mt-3">
-        <h1 class="text-center">Editar Cliente</h1>
+        <h1 class="text-center">Editar Proveedor</h1>
     </div>
 
     <div class="container mt-3">
-        <form action="Actualizar.Cliente.php" method="post">
+        <form action="Actualizar.Proveedor.php" method="post">
             <?php
             include_once('../../../Config/Conexion.php');
 
-            if (isset($_REQUEST['IDCliente'])) {
-                $clienteId = $_REQUEST['IDCliente'];
+            if (isset($_REQUEST['IDProveedor'])) {
+                $proveedorId = $_REQUEST['IDProveedor'];
 
-                $sql = "SELECT * FROM cliente WHERE IDCliente = $clienteId";
+                $sql = "SELECT * FROM proveedor WHERE IDProveedor = $proveedorId";
                 $resultado = $conexion->query($sql);
 
                 if ($resultado) {
@@ -32,12 +32,12 @@
                     echo "Error en la consulta SQL: " . $conexion->error;
                 }
             } else {
-                echo "No se proporcionó el ID del cliente.";
+                echo "No se proporcionó el ID del Proveedor.";
             }
             ?>
 
-            <input type="hidden" class="form-control" id="IDCliente" name="IDCliente" required maxlength="255"
-                value="<?php echo $row['IDCliente']; ?>">
+            <input type="hidden" class="form-control" id="IDProveedor" name="IDProveedor" required maxlength="255"
+                value="<?php echo $row['IDProveedor']; ?>">
 
             <div class="mb-3">
                 <label for="Nombre" class="form-label">Nombre</label>
@@ -112,7 +112,7 @@
 
             <div class="text-center mb-3">
                 <button type="submit" class="btn btn-primary">Actualizar</button>
-                <a href="../Cliente.php" class="btn btn-secondary">Volver</a>
+                <a href="../Proveedor.php" class="btn btn-secondary">Volver</a>
             </div>
         </form>
     </div>
