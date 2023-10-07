@@ -110,7 +110,7 @@
                                 <a href="ABM/Editar.Servicio.php?IDServicio=<?php echo $resultado['IDServicio']; ?>"
                                     class="btn btn-warning me-2">Editar</a>
                                 <a href="ABM/Eliminar.Servicio.php?IDServicio=<?php echo $resultado['IDServicio']; ?>"
-                                    class="btn btn-danger">Eliminar</a>
+                                onclick="return confirm('¿Seguro que desea eliminar este Servicio?');" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
                         <?php

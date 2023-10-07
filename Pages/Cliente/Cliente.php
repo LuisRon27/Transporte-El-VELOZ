@@ -135,7 +135,7 @@
                                 <a href="ABM/Editar.Cliente.php?IDCliente=<?php echo $resultado['IDCliente']; ?>"
                                     class="btn btn-warning me-2">Editar</a>
                                 <a href="ABM/Eliminar.Cliente.php?IDCliente=<?php echo $resultado['IDCliente']; ?>"
-                                    class="btn btn-danger">Eliminar</a>
+                                onclick="return confirm('¿Seguro que desea eliminar este cliente?');" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
                         <?php

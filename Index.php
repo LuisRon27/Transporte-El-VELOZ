@@ -61,6 +61,7 @@
         </div>
     </nav>
 
+    <!-- resumen -->
     <div class="container px-4 py-5" id="icon-grid">
         <h2 class="pb-2 border-bottom">Resumen - <?php echo date('d/m/Y'); ?></h2>
 

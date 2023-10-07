@@ -135,7 +135,7 @@
                                 <a href="ABM/Editar.Proveedor.php?IDProveedor=<?php echo $resultado['IDProveedor']; ?>"
                                     class="btn btn-warning me-2">Editar</a>
                                 <a href="ABM/Eliminar.Proveedor.php?IDProveedor=<?php echo $resultado['IDProveedor']; ?>"
-                                    class="btn btn-danger">Eliminar</a>
+                                onclick="return confirm('¿Seguro que desea eliminar este Proveedor?');" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
                         <?php
