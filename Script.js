@@ -1,15 +1,17 @@
-// Función para buscar y filtrar 
+// Función para buscar y filtrar
 function filterTable() {
     var input, filter, table, tr, td, i, j, txtValue;
     input = document.getElementById("searchInput");
     filter = input.value.toUpperCase();
     table = document.querySelector("table");
     tr = table.getElementsByTagName("tr");
+    var noRecordsMessage = document.getElementById("noRecordsMessage");
 
     // Iterar sobre las filas de datos (omitir la fila del encabezado)
+    var matchesFound = false;
     for (i = 1; i < tr.length; i++) { // Comienza desde 1 para omitir la fila de encabezado
         tds = tr[i].getElementsByTagName("td");
-        matches = false;
+        var matches = false;
 
         // Iterar sobre las celdas de cada fila
         for (j = 0; j < tds.length; j++) {
@@ -18,6 +20,7 @@ function filterTable() {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
                     matches = true;
+                    matchesFound = true;
                     break;
                 }
             }
@@ -29,6 +32,13 @@ function filterTable() {
         } else {
             tr[i].style.display = "none";
         }
+    }
+
+    // Mostrar o ocultar el mensaje "No hay registros"
+    if (!matchesFound) {
+        noRecordsMessage.style.display = "block";
+    } else {
+        noRecordsMessage.style.display = "none";
     }
 }
 

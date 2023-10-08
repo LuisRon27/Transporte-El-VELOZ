@@ -39,9 +39,6 @@
                     <li class="nav-item" style="margin: 0px 10px;">
                         <a class="nav-link" href="Venta.php">Ventas</a>
                     </li>
-                    <li class="nav-item" style="margin: 0px 10px;">
-                        <a class="nav-link" href="">Compras</a>
-                    </li>
                 </ul>
 
                 <!-- Dropdown (esquina superior derecha) -->

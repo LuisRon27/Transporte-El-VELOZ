@@ -39,9 +39,6 @@
                     <li class="nav-item" style="margin: 0px 10px;">
                         <a class="nav-link" href="../Ventas/Venta.php">Ventas</a>
                     </li>
-                    <li class="nav-item" style="margin: 0px 10px;">
-                        <a class="nav-link">Compras</a>
-                    </li>
                 </ul>
 
                 <!-- Dropdown (esquina superior derecha) -->
@@ -143,6 +140,7 @@
                     ?>
                 </tbody>
             </table>
+            <div id="noRecordsMessage" class="alert alert-warning text-center" style="display: none;">No hay registros</div>    
         </div>
     </div>
 

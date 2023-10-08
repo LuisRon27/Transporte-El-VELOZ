@@ -41,9 +41,6 @@
                     <li class="nav-item" style="margin: 0px 10px;">
                         <a class="nav-link" href="Pages/Ventas/Venta.php">Ventas</a>
                     </li>
-                    <li class="nav-item" style="margin: 0px 10px;">
-                        <a class="nav-link">Compras</a>
-                    </li>
                 </ul>
 
                 <!-- Dropdown (esquina superior derecha) -->
@@ -195,7 +192,7 @@
             <div class="col d-flex align-items-start">
                     <i class="bi bi-cart text-body-secondary flex-shrink-0 me-3" style="font-size: 2rem;" ></i>
                 <div>
-                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Localidades</h3>
+                    <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Compras</h3>
 
                     <?php
                         require("Config/Conexion.php");
